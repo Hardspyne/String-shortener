@@ -37,4 +37,10 @@ public class StrategyFunctionalTest {
         Shortener shortener = new Shortener(new OurHashBiMapStorageStrategy());
         testStorage(shortener);
     }
+
+    @Test
+    public void testDualHashBidiMapStorageStrategy() {
+        Shortener shortener = new Shortener(new DualHashBidiMapStorageStrategy());
+        testStorage(shortener);
+    }
 }
