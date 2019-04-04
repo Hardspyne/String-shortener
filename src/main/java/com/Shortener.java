@@ -24,4 +24,8 @@ public class Shortener {
     public synchronized String getString(Long id) {
         return storageStrategy.getValue(id);
     }
+
+    public synchronized boolean containsKey(Long id) {
+        return storageStrategy.containsKey(id);
+    }
 }

@@ -11,7 +11,7 @@
     <title>Strategy selection</title>
 </head>
 <body>
-<form action="shortener" method="post">
+<form action="controller" method="post">
     <label for="str">Select strategy</label>
     <select id="str" name="strategy" size="1">
         <option value="DualHashBidiMapStorageStrategy">DualHashBidiMapStorageStrategy</option>
