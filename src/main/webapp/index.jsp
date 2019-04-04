@@ -8,9 +8,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Strategy selection</title>
 </head>
 <body>
-
+<form action="shortener" method="post">
+    <label for="str">Select strategy</label>
+    <select id="str" name="strategy" size="1">
+        <option value="DualHashBidiMapStorageStrategy">DualHashBidiMapStorageStrategy</option>
+        <option value="HashBiMapStorageStrategy">HashBiMapStorageStrategy</option>
+        <option value="HashMapStorageStrategy">HashMapStorageStrategy</option>
+        <option value="OurHashBiMapStorageStrategy">OurHashBiMapStorageStrategy</option>
+        <option value="OurHashMapStorageStrategy">OurHashMapStorageStrategy</option>
+    </select>
+    <input type="submit" value="confirm">
+</form>
 </body>
 </html>
