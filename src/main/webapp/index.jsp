@@ -12,7 +12,7 @@
 </head>
 <body>
 <div style="height: 100%;font-size:24px ;display: flex;flex-direction: column;justify-content: center;align-items: center;">
-    <div>choose a strategy if you want. By default, the "DataBase Storage Strategy" is selected. We recommend using it.
+    <div>Choose a strategy if you want. By default, the "DataBase Storage Strategy" is selected. We recommend using it.
     </div>
     <form style="display: flex;flex-direction: column;justify-content: center;align-items: center;" action="controller"
           method="post">

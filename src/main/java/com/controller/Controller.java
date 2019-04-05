@@ -19,13 +19,13 @@ public class Controller extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String result = null;
 
-        String stringOrUrl = req.getParameter("string");
+        String string = req.getParameter("string");
         if (req.getParameter("option").equals("full")) {
-            result = shortener.getId(stringOrUrl).toString();
+            result = shortener.getId(string).toString();
         } else if (req.getParameter("option").equals("short")) {
-            if (stringOrUrl.matches("\\d")) {
-                result = !shortener.containsKey(Long.parseLong(stringOrUrl)) ? "Value does not exist. Try Again" :
-                        shortener.getString(Long.parseLong(stringOrUrl));
+            if (string.matches("\\d")) {
+                result = !shortener.containsKey(Long.parseLong(string)) ? "Value does not exist. Try Again" :
+                        shortener.getString(Long.parseLong(string));
             } else {
                 result = "Invalid data. Please write digit";
             }

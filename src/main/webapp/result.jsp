@@ -10,10 +10,12 @@
 
 <html>
 <head>
-    <title>result</title>
+    <title>Result</title>
 </head>
 <body>
-<c:out value="${result}" />
-<a href="shortener.jsp">createOtherShortUrl</a>
+<div style="height: 100%;font-size:20px;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+    <input style="margin-top:30px;height:30px;width: 50%;text-align: center;" type="text" name="result" readonly value="<c:out value="${result}" />">
+    <a style="font-size:20px;text-decoration: none;color:black;font-weight:bold;margin-top: 10px" href="shortener.jsp">Short other string</a>
+</div>
 </body>
 </html>
