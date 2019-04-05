@@ -1,15 +1,17 @@
 package com.strategy;
 
 import com.Shortener;
+import com.utils.Helper;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class StrategyFunctionalTest {
 
     private void testStorage(Shortener shortener) {
-        String string1 = "one";
-        String string2 = "two";
-        String string3 = "one";
+        String string1 = Helper.generateRandomString();
+        String string2 = Helper.generateRandomString();
+        String string3 = string1;
+
         Long id1 = shortener.getId(string1);
         Long id2 = shortener.getId(string2);
         Long id3 = shortener.getId(string3);
@@ -53,6 +55,14 @@ public class StrategyFunctionalTest {
     @Test
     public void testOurHashMapStorageStrategy() {
         Shortener shortener = new Shortener(new OurHashMapStorageStrategy());
+        testStorage(shortener);
+    }
+
+    @Test
+    public void testDataBaseStorageStrategy() {
+        DataBaseStorageStrategy storageStrategy = new DataBaseStorageStrategy();
+        Shortener shortener = new Shortener(storageStrategy);
+        shortener.setLastId(storageStrategy.getLastID());
         testStorage(shortener);
     }
 }

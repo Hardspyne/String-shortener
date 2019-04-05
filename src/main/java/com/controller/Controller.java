@@ -38,7 +38,7 @@ public class Controller extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StorageStrategy storageStrategy = null;
+        StorageStrategy storageStrategy = new DataBaseStorageStrategy();
 
         String strategy = req.getParameter("strategy");
         switch (strategy) {
@@ -60,6 +60,10 @@ public class Controller extends HttpServlet {
         }
 
         shortener = new Shortener(storageStrategy);
+
+        if (storageStrategy instanceof DataBaseStorageStrategy) {
+            shortener.setLastId(((DataBaseStorageStrategy) storageStrategy).getLastID());
+        }
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("shortener.jsp");
         requestDispatcher.forward(req, resp);

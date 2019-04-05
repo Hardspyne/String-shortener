@@ -28,4 +28,8 @@ public class Shortener {
     public synchronized boolean containsKey(Long id) {
         return storageStrategy.containsKey(id);
     }
+
+    public void setLastId(Long lastId) {
+        this.lastId = lastId;
+    }
 }
