@@ -1,4 +1,4 @@
-<%--
+    <%--
   Created by IntelliJ IDEA.
   User: dwe
   Date: 04.04.2019
@@ -8,22 +8,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Shortener</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div style="width: 50%;font-size: 20px;margin-left: auto;margin-right: auto;">
-    <form style="height:100%;width:100%;display: flex;flex-direction: column;justify-content:center;align-items:center;"
-          action="controller" method="get">
-        <div style="width:100%;display: flex;flex-direction: row;justify-content:space-around;align-items: flex-end;">
+<div class="alignDiv">
+    <form class="container fullWindowForm" action="controller" method="get">
+        <div class="chooseShortOption">
             <label for="full">Get short string</label>
-            <label for="short">Get full string</label></div>
-        <div style="width:100%;display: flex;flex-direction: row;justify-content:space-around;align-items: flex-end;">
+            <label for="short">Get full string</label>
+        </div>
+        <div class="chooseShortOption">
             <input id="full" type="radio" name="option" value="full" checked>
-            <input id="short" type="radio" name="option" value="short"></div>
-        <label style="margin:10px;font-weight: bold;font-size: 24px" for="str">paste string here</label>
-        <input style="width: 100%; height:30px" id="str" type="text" name="string">
-        <input type="submit" style="margin-top: 10px" value="confirm">
-        <a style="font-size:20px;text-decoration: none;color:black;font-weight:bold;margin-top: 10px" href="index.jsp">Choose
+            <input id="short" type="radio" name="option" value="short">
+        </div>
+        <label class="chooseHeader" for="str">paste string here</label>
+        <input class="inputTextToShort" id="str" type="text" name="string">
+        <input type="submit" value="confirm">
+        <a class="link" href="index.jsp">Choose
             other storage strategy</a>
     </form>
 </div>
